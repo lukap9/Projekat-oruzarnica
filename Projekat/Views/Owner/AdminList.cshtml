@@ -1,0 +1,48 @@
+﻿@model List<Projekat.Context.Logovanje>
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: auto;
+        text-align: center;
+    }
+    h2{
+        padding:20px;
+        text-align:center;
+    }
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<h2> Lista administratora</h2>
+<table>
+    <tr>
+        <th>Ime admina</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.KorisnickoIme</td>
+            
+           
+        </tr>
+    }
+</table>
+

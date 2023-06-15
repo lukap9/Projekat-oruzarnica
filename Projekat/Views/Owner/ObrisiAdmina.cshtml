@@ -1,0 +1,15 @@
+﻿@model Projekat.Context.Logovanje
+@{
+    ViewBag.Title = "ObrisiAdmina";
+}
+
+
+<h1 style="padding: 20px;">Obriši administratora</h1>
+
+
+@using (Html.BeginForm("ObrisiAdminaDelete", "Owner", FormMethod.Post))
+{
+    <label>Unesite ime administratora</label>
+    @Html.TextBoxFor(x => x.KorisnickoIme);
+    <button type="submit" style="color: white" class="btn btn-success">Obriši</button>
+}

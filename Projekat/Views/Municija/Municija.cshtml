@@ -1,0 +1,52 @@
+﻿@model Projekat.Context.Municija
+@{
+    ViewBag.Title = "Municija";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .error {
+        color: red;
+        
+    }
+</style>
+@using (Html.BeginForm("DodajMuniciju", "Municija", FormMethod.Post))
+{
+    
+    <div class="container" style="padding: 20px;">
+        <div class="form-group">
+            <label>ID municije</label>
+            @Html.ValidationMessageFor(x => x.IDMunicije, "")
+            @Html.TextBoxFor(x => x.IDMunicije,  new { Value=ViewBag.IDMunicije,@style="form-control"})
+        </div>
+        <div class="form-group">
+            <label>godina proizvodnje</label>
+            @Html.ValidationMessageFor(x => x.godinaProizvodnje, "")
+            @Html.TextBoxFor(x => x.godinaProizvodnje, new { @style = "form-control",Value = ViewBag.godinaProizvodnje})
+            
+        </div>
+        
+        <div class="form-group">
+            <label>kalibar</label>
+            @Html.ValidationMessageFor(x => x.kalibar, "")
+            @Html.TextBoxFor(x => x.kalibar, new { @style = "form-control", Value = ViewBag.kalibar})
+        </div>
+        <div class="form-group">
+            <label>broj metaka</label>
+            @Html.ValidationMessageFor(x => x.brojMetaka, "")
+            @Html.TextBoxFor(x => x.brojMetaka, new { @style = "form-control", Value =ViewBag.brojMetaka})
+        </div>
+        <div class="form-group">
+            <label>cena</label>
+            @Html.ValidationMessageFor(x => x.cena, "")
+            @Html.TextBoxFor(x => x.cena, new { @style = "form-control", Value =ViewBag.cena })
+        </div>
+        <div class="form-group">
+
+            <button type="submit" style="color: white" class="btn btn-success">Unesi</button>
+        </div>
+    </div>
+}
+
+
+

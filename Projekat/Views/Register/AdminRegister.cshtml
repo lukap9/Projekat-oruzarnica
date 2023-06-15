@@ -1,0 +1,73 @@
+﻿@model Projekat.Context.Logovanje
+@{
+    ViewBag.Title = "RegisterStrana";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>User register</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Login</title>
+
+    <style>
+
+        #login-div {
+            margin: auto;
+            border-radius: 3px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-div">
+        @using (Html.BeginForm("UbaciAdminRegister", "Register", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.KorisnickoIme)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.KorisnickoIme)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Sifra)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(model => model.Sifra)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-success" name="name" value="Register" />
+                    </td>
+                    <td>
+                    </td>
+
+                </tr>
+            </table>
+
+        }
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+﻿@model List<Projekat.Context.Logovanje>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "AdminList";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+
+        h1 {
+            margin: 15px;
+        } 
+         
+        h2 {
+            margin: 15px;
+        }
+
+        a {
+        }
+
+        table {
+            margin: 20px;
+        }
+
+        th {
+            margin: 2px;
+            background-color: lightgreen;
+            width: 200px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        td {
+            margin: 2px;
+            background-color: lightgray;
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body style="padding: 20px">
+
+    <header>
+        <h1>Vlasnik panel</h1>
+        <h2>Ovde možete dodavati i brisati administratore.</h2>
+    </header>
+
+    <a style="margin: 10px;color: darkblue!important" href="/Register/AdminRegister">Dodaj novog administratora</a>
+
+
+    <a style=" margin: 10px;color: darkblue!important" href="/Owner/ObrisiAdmina">Obriši administratora</a>
+
+    <a style="margin:10px;color:darkblue!important"href="/Owner/AdminList">Lista administratora</a>
+
+</body>
+</html>
+

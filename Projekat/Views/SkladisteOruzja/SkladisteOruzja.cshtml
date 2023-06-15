@@ -1,0 +1,68 @@
+﻿@model Projekat.Context.SkladisteOruzja
+@{
+    ViewBag.Title = "SkladisteOruzja";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .error {
+        color: red;
+    }
+</style>
+@using (Html.BeginForm("DodajSkladisteOruzje", "SkladisteOruzja", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+
+            <label>Broj priznanice</label>
+            @Html.ValidationMessageFor(x => x.BrojPriznanice, "")
+            @Html.TextBoxFor(x => x.BrojPriznanice, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+
+            <label>ID Oruzja</label>
+            @Html.ValidationMessageFor(x => x.IDOruzja, "")
+            @Html.TextBoxFor(x => x.IDOruzja, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>naziv</label>
+            @Html.ValidationMessageFor(x => x.naziv, "")
+            @Html.TextBoxFor(x => x.naziv, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>tip</label>
+            @Html.ValidationMessageFor(x => x.tip, "")
+            @Html.TextBoxFor(x => x.tip, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>godina proizvodnje</label>
+            @Html.ValidationMessageFor(x => x.godinaProizvodnje, "")
+            @Html.TextBoxFor(x => x.godinaProizvodnje, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Ime</label>
+            @Html.ValidationMessageFor(x => x.Ime, "")
+            @Html.TextBoxFor(x => x.Ime, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Prezime</label>
+            @Html.ValidationMessageFor(x => x.Prezime, "")
+            @Html.TextBoxFor(x => x.Prezime, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>JMBG</label>
+            @Html.ValidationMessageFor(x => x.JMBG, "")
+            @Html.TextBoxFor(x => x.JMBG, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>status</label>
+            @Html.ValidationMessageFor(x => x.statusSkladistenja)
+            @Html.TextBoxFor(x => x.statusSkladistenja, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+
+            <button type="submit" style="color: white" class="btn btn-success">Unesi</button>
+        </div>
+    </div>
+}
+

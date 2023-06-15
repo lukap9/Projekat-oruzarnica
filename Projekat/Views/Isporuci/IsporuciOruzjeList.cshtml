@@ -1,0 +1,63 @@
+﻿@model List<Projekat.Context.IsporukaOruzja>
+@{
+    ViewBag.Title = "IsporuciOruzjeList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<table>
+    <tr>
+        <th>Broj fakture</th>
+        <th>vreme isporuke</th>
+        <th>cena </th>
+        <th>ime kupca</th>
+        <th>prezime kupca</th>
+        <th>adresa kupca</th>
+        <th>broj telefona kupca</th>
+        <th>JMBG</th>
+        <th>ID oruzja</th>
+        <th>status</th>
+        <th>akcija</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BrojFakture</td>
+            <td>@item.VremeIsporuke</td>
+             <td>@item.cena</td>
+            <td>@item.ImeKupca</td>
+            <td>@item.PrezimeKupca</td>
+            <td>@item.AdresaKupca</td>
+            <td>@item.BrojTelefonaKupca</td>
+            <td>@item.JMBG</td>
+            <td>@item.IDOruzja</td>
+            <td>@item.statusIsporuke</td>
+            <td>
+                <a href="@Url.Action("UpdateIsporuciOruzje",new { item.BrojFakture })" style="margin: 5px;" class=" btn btn-info">Update</a>
+                <a href="@Url.Action("DeleteIsporukaOruzja",new { item.BrojFakture })" style="margin: 5px;" class=" btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

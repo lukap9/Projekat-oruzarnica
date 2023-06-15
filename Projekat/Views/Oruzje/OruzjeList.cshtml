@@ -1,0 +1,54 @@
+﻿@model List<Projekat.Context.Oruzjee>
+@{
+    ViewBag.Title = "OruzjeList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border:  none;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: none;
+    }
+</style>
+<table>
+    <tr>
+        <th>ID Oruzja</th>
+        <th>naziv</th>
+        <th>tip</th>
+        <th>godina proizvodnje</th>
+        <th>cena</th>
+        <th>akcija</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDOruzja</td>
+            <td>@item.naziv</td>
+            <td>@item.tip</td>
+            <td>@item.godinaProizvodnje</td>
+            <td>@item.cena</td>
+            <td>
+                <a href="@Url.Action("UpdateOruzje",new { item.IDOruzja })" style="margin: 5px;" class=" btn btn-info">Update</a>
+                <a href="@Url.Action("Delete",new { item.IDOruzja })" style="margin: 5px;" class=" btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+

@@ -1,0 +1,58 @@
+﻿@model Projekat.Context.SkladisteMunicije
+@{
+    ViewBag.Title = "SkladisteMunicije";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<h1 style="padding: 20px;">Predaja municije</h1>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+@using (Html.BeginForm("UbaciPredajMuniciju", "Predaj", FormMethod.Post))
+{
+    <div class="container">
+        
+        <div class="form-group">
+
+            <label>ID municije</label>
+          
+            @Html.TextBoxFor(x => x.IDMunicije, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>godina proizvodnje</label>
+           
+            @Html.TextBoxFor(x => x.godinaProizvodnje, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>kalibar</label>
+            
+            @Html.TextBoxFor(x => x.kalibar, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>broj metaka</label>
+            
+            @Html.TextBoxFor(x => x.brojMetaka, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Ime</label>
+            
+            @Html.TextBoxFor(x => x.Ime, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Prezime</label>
+            
+            @Html.TextBoxFor(x => x.Prezime, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>JMBG</label>
+       
+            @Html.TextBoxFor(x => x.JMBG, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+
+            <button type="submit" style="color: white" class="btn btn-success">Unesi</button>
+        </div>
+    </div>
+}
+

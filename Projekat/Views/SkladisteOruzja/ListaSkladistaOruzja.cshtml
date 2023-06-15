@@ -1,0 +1,67 @@
+﻿@model List<Projekat.Context.SkladisteOruzja>
+@{
+    ViewBag.Title = "ListaSkladistaOruzja";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<table>
+    <tr>
+        <th>broj priznanice</th>
+        <th>vreme priznanice</th>
+        <th>ID Oruzja</th>
+        <th>naziv</th>
+        <th>tip</th>
+        <th>godina proizvodnje</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>JMBG</th>
+        <th>status</th>
+        <th>akcija</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.BrojPriznanice</td>
+    <td>@item.VremePriznanice</td>
+    <td>@item.IDOruzja</td>
+    <td>@item.naziv</td>
+    <td>@item.tip</td>
+    <td>@item.godinaProizvodnje</td>
+    <td>@item.Ime</td>
+    <td>@item.Prezime</td>
+    <td>@item.JMBG</td>
+    <td>@item.statusSkladistenja</td>
+
+
+    <td>
+        <a href="@Url.Action("UpdateSkladisteOruzja",new { item.BrojPriznanice })" style="margin: 5px;" class=" btn btn-info">Update</a>
+        <a href="@Url.Action("Delete",new { item.BrojPriznanice })" style="margin: 5px;" class=" btn btn-danger">Delete</a>
+    </td>
+</tr>
+
+    }
+
+</table>
+

@@ -1,0 +1,58 @@
+﻿@model List<Projekat.Context.KupovinaMunicije>
+@{
+    ViewBag.Title = "KupiMunicijuList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<table>
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Adresa</th>
+        <th>Broj telefona</th>
+        <th>Broj kartice</th>
+        <th>PIN kartice</th>
+        <th>JMBG</th>
+        <th>ID municije</th>
+        <th>akcija</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Ime</td>
+            <td>@item.Prezime</td>
+            <td>@item.Adresa</td>
+            <td>@item.BrojTelefona</td>
+            <td>@item.BrojKartice</td>
+            <td>@item.PINKartice</td>
+            <td>@item.JMBG</td>
+            <td>@item.IDMunicije</td>
+            <td>
+                <p class=" btn btn-default">@Html.ActionLink("UpdateMunicija", "KupiMuniciju", "Kupi")</p>
+                <a href="@Url.Action("DeleteMunicija",new { item.IDMunicije })" style="margin: 5px;" class=" btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

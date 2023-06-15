@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "MunicijaList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: none;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: none;
+    }
+</style>
+<table>
+    <tr>
+        <th>ID Municije</th>
+        <th>godina proizvodnje</th>
+        <th>kalibar</th>
+        <th>broj metaka</th>
+        <th>cena</th>
+       
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDMunicije</td>
+            <td>@item.godinaProizvodnje</td>
+            <td>@item.kalibar</td>
+            <td>@item.brojMetaka</td>
+            <td>@item.cena</td>
+            
+            
+        </tr>
+    }
+</table>
+

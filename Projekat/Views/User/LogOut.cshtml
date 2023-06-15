@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "LogOut";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+<style>
+    .dugme {
+        background-color: blue;
+        color: white;
+        font-family: sans-serif;
+    }
+</style>
+@using (Html.BeginForm("Izlogujse", "UserLogout", FormMethod.Post))
+{
+    <div class="container" style="padding: 20px;">
+        <h1>Da li zelite da se izlogujete?</h1>
+        <div class="form-group">
+            <button type="submit" style="color: white" class="dugme">Izloguj se</button>
+        </div>
+    </div>
+}
+

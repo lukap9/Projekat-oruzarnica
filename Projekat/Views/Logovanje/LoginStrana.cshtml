@@ -1,0 +1,129 @@
+﻿@model Projekat.Context.Logovanje
+@{
+    ViewBag.Title = "LoginStrana";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width" />
+    <title>Login</title>
+
+    <style>
+
+        #login-div
+        {
+            background-color: lightskyblue;
+            margin:auto;
+            border-radius:15px;
+            border: none;
+            padding: 10px;
+            width: 500px;
+            margin:auto;
+            margin-top: 50px;
+
+        }
+        form{
+            text-align:center;
+        }
+        .btn.btn-success
+        {
+            margin:auto;
+        }
+        .no-outline:focus {
+            outline: none;
+        }
+        input#Sifra {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: hidden;
+        }
+        .text-box {
+           
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: hidden;
+           
+        }
+        .field-validation-valid
+        {
+            border:none;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight:bold;
+        }
+        table{
+            margin:auto;
+        }
+        body {
+            background-image: url('https://wallpaperaccess.com/full/2314983.jpg')!important;
+        }
+        td,th
+        {
+         padding: 5px;
+         border:none;
+         
+        }
+        a.customlink
+        {
+            color: deepskyblue!important;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="login-div">
+        @using (Html.BeginForm("Authorize", "Logovanje", FormMethod.Post))
+        {
+            <h2>User Login</h2>
+            <table>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.KorisnickoIme, "Korisničko ime")
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(x => x.KorisnickoIme, "")
+                        @Html.EditorFor(model => model.KorisnickoIme)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.Sifra,"Šifra")
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(x => x.Sifra, "")
+                        @Html.PasswordFor(model => model.Sifra)
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td style="color: dodgerblue!important">
+
+                        <a style="color: darkblue!important" href="/Register/RegisterStrana">Nemate nalog? Registrujte se</a>
+                    </td>
+
+                </tr>
+            </table>
+            <input type="submit" class="btn btn-success" style="margin-left:auto!important; margin-right:auto!important; margin-top:15px;margin-bottom:15px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight:bold;" name="name" value="Login" />
+
+        }
+    </div>
+</body>
+</html>

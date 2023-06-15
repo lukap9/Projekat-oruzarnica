@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Admin Layout stranica</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+    .dropbtn {
+    background-color: darkseagreen;
+
+    padding: 13.5px;
+    font-size: 14px;
+    border: none;
+    }
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gray;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    .dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+
+    .dropdown-content li:hover {background-color: #696969; color:white;}
+
+    .dropdown:hover .dropdown-content {display: block; color:white;}
+
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+        a {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        li {
+            opacity: 0.8;
+            transition: 0.5s;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar {
+            opacity: 0.8;
+            transition: 0.5s;
+            border: none;
+        }
+
+        li:hover {
+            opacity: 1;
+            transition: 0.5s;
+            background-color: darkgray;
+        }
+
+        .navbar:hover {
+            transition: 0.5s;
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+<body style="background-image: url('image/gunstore.png');">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: darkseagreen; padding: 0px!important; margin: 0px!important; ">
+        <div class="container">
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Index", "Index", "Admin")</li>
+                    
+                    <li>@Html.ActionLink("Log out", "LogOut", "LogOut")</li>
+                    <div class="dropdown">
+                        <button class="dropbtn">Oruzje</button>
+                        <div class="dropdown-content">
+                    <li>@Html.ActionLink("Lista oruzja", "OruzjeList", "Oruzje")</li>
+                    <li>@Html.ActionLink("Dodaj oruzje", "Oruzje", "Oruzje")</li>
+                    <li>@Html.ActionLink("Skladisti oruzje", "SkladisteOruzja", "SkladisteOruzja")</li>
+                    <li>@Html.ActionLink("Lista skladista oruzja", "ListaSkladistaOruzja", "SkladisteOruzja")</li>
+                    <li>@Html.ActionLink("Lista kupovine oruzja", "KupiOruzjeList", "Kupi")</li>
+                    <li>@Html.ActionLink("Isporuci oruzje", "IsporuciOruzje", "Isporuci")</li>
+                    <li>@Html.ActionLink("Lista isporuke oruzja", "IsporuciOruzjeList", "Isporuci")</li>
+</div>
+                        </div>
+                    <div class="dropdown">
+                        <button class="dropbtn">Municija</button>
+                        <div class="dropdown-content">
+                            <li>@Html.ActionLink("Lista skladista municije", "ListaSkladistaMunicije", "SkladisteMunicije")</li>
+                            <li>@Html.ActionLink("Skladisti munciiju", "SkladisteMunicije", "SkladisteMunicije")</li>
+                            <li>@Html.ActionLink("Lista municije", "MunicijaList", "Municija")</li>
+                            <li>@Html.ActionLink("Dodaj municiju", "Municija", "Municija")</li>
+                            <li>@Html.ActionLink("Lista kupovine municije", "KupiMunicijuList", "Kupi")</li>
+                            <li>@Html.ActionLink("Isporuci municiju", "IsporuciMuniciju", "Isporuci")</li>
+                            <li>@Html.ActionLink("Lista isporuke municije", "IsporuciMunicijuList", "Isporuci")</li>
+                        </div>
+                    </div>
+
+
+
+
+                </ul>
+
+    </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

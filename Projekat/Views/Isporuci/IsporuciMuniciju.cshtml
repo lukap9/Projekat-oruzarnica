@@ -1,0 +1,76 @@
+﻿@model Projekat.Context.IsporukaMunicije
+@{
+    ViewBag.Title = "IsporukaMunicije";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 style="padding: 20px;">Isporuka municije</h1>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+@using (Html.BeginForm("UbaciIsporuciMuniciju", "Isporuci", FormMethod.Post))
+{
+    <div class="container">
+
+        <div class="form-group">
+
+            <label>Broj fakture</label>
+
+            @Html.TextBoxFor(x => x.BrojFakture, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>cena</label>
+
+            @Html.TextBoxFor(x => x.cena, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Ime kupca</label>
+
+            @Html.TextBoxFor(x => x.ImeKupca, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Prezime kupca</label>
+
+            @Html.TextBoxFor(x => x.PrezimeKupca, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>Adresa kupca</label>
+
+            @Html.TextBoxFor(x => x.AdresaKupca, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>Broj telefona kupca</label>
+
+            @Html.TextBoxFor(x => x.BrojTelefonaKupca, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>JMBG Kupca</label>
+
+            @Html.TextBoxFor(x => x.JMBG, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>ID Oruzja</label>
+
+            @Html.TextBoxFor(x => x.IDMunicije, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>status isporuke</label>
+
+            @Html.TextBoxFor(x => x.statusIsporuke, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+
+            <button type="submit" style="color: white" class="btn btn-success">Unesi</button>
+        </div>
+
+    </div>
+}
+
+

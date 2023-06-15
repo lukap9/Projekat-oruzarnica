@@ -1,0 +1,56 @@
+﻿@model List<Projekat.Context.Municija>
+@{
+    ViewBag.Title = "MunicijaList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    table {
+        margin: 20px;
+    }
+
+    th {
+        margin: 2px;
+        background-color: lightgreen;
+        width: 200px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    td {
+        margin: 2px;
+        background-color: lightgray;
+        width: 200px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+<table>
+    <tr>
+        <th>ID Municije</th>
+        <th>godina proizvodnje</th>
+        <th>kalibar</th>
+        <th>broj metaka</th>
+        <th>cena</th>
+        <th>akcija</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.IDMunicije</td>
+            <td>@item.godinaProizvodnje</td>
+            <td>@item.kalibar</td>
+            <td>@item.brojMetaka</td>
+            <td>@item.cena</td>
+            <td>
+               
+                   
+                    <a href="@Url.Action("UpdateMunicija",new { item.IDMunicije })" style="margin: 5px;" class=" btn btn-info">Update</a>
+                
+                <a href="@Url.Action("Delete",new { item.IDMunicije })" style="margin: 5px;" class=" btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+
